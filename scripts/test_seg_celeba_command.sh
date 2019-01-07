@@ -1,0 +1,2 @@
+CUDA_VISIBLE_DEVICES=0 python main.py --mode='seg' --dataset='CelebA' --experiment_path='./experiment_seg_sng_2' --pretrained_model='40_9000'\
+ --test_img_path='data/CelebA_nocrop/img_cyclegan_1000' --test_seg_path='data/CelebA_nocrop/seg_test_1000' 

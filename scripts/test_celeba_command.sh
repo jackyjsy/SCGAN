@@ -1,0 +1,2 @@
+CUDA_VISIBLE_DEVICES=0 python main.py --mode='test_seg' --dataset='CelebA' --experiment_path='./experiment_celeba_mod_final' \
+--test_seg_path='data/CelebA_nocrop/seg_test_1000' --pretrained_model='20_12000'

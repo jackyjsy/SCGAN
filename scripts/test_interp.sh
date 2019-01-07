@@ -1,0 +1,1 @@
+python main.py --mode="test_interp_all" --pretrained_model="40_9000" --model_save_path="experiment_seg_sng_2/models" --result_path="experiment_seg_sng_2/results/epoch_40_interp_all" --test_seg_path="data/CelebA_nocrop/test/interp_all"
