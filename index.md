@@ -31,26 +31,35 @@ Our proposed SCGAN consists of three networks shown below, which are a generator
 - We propose a segmentor network S to provide spatial constraints in conditional image generation. S takes either real or generated image data as input and outputs the probabilities of pixel-wise semantic segmentation results
 
 ### Objective Functions
-- Adversarial Loss  
+- **Adversarial Loss**. We adopt a conditional objective from
+Wasserstein GAN with gradient penalty  
 <img src="https://render.githubusercontent.com/render/math?math=\mathcal{L}_{adv}={L}_{adv}^{real}+{L}_{adv}^{fake}+{L}_{gp}">,    
-- Classification Loss  
+which can be rewritten as  
+<img src="https://render.githubusercontent.com/render/math?math=\mathcal{L}_{adv}=\mathbb{E}_{x}\left[D_{d}\left(x\right)\right]+\mathbb{E}_{z,c,s}\left[D_{d}\left(G\left(z,c,s \right)\right)\right]\lambda_{gp}\mathbb{E}_{\hat{x}}\left[\left(\left\|\triangledown_{\hat{x}}D_{d}\left(\hat{x}\right)\right\|_{2}-1\right)^2\right],">  
+- **Classification Loss**  for real and fake samples are defined as   
 <img src="https://render.githubusercontent.com/render/math?math=\mathcal{L}_{cls}^{real}=\mathbb{E}_{x,c}\left[A_c(c,D_{c}(x))\right]">,   
 <img src="https://render.githubusercontent.com/render/math?math=\mathcal{L}_{cls}^{fake}=\mathbb{E}_{z,c,s}\left[A_c(c,D_{c}(G(z,c,s)))\right]">,  
-- Segmentation Loss  
+- **Segmentation Loss**  acts as a spatial constraint to regulate the generator to comply with the spatial information defined by the input semantic segmentation. The proposed real segmentation loss to optimize the segmentor network $S$ can be described as  
 <img src="https://render.githubusercontent.com/render/math?math=\mathcal{L}_{seg}^{real}=\mathbb{E}_{x,s}[A_s(s, S(x)]">,  
 <img src="https://render.githubusercontent.com/render/math?math=\mathcal{L}_{seg}^{fake}=\mathbb{E}_{z,c,s}\left[A_s(s, S(G(z, c, s)))\right]">,  
-- Overall Objectives:  
+- **Overall Objectives** to optimize S, D and G in SCGAN can be represented as   
 <img src="https://render.githubusercontent.com/render/math?math=\mathcal{L}_{S}=\mathcal{L}_{seg}^{real}">,  
 <img src="https://render.githubusercontent.com/render/math?math=\mathcal{L}_{D}=-\mathcal{L}_{adv}+\lambda_{cls}\mathcal{L}_{cls}^{real}">,  
-<img src="https://render.githubusercontent.com/render/math?math=\mathcal{L}_{G}=\mathcal{L}_{adv}^{fake}+\lambda_{cls}\mathcal{L}_{cls}^{fake}+\lambda_{seg}\mathcal{L}_{seg}^{fake}">,
+<img src="https://render.githubusercontent.com/render/math?math=\mathcal{L}_{G}=\mathcal{L}_{adv}^{fake}+\lambda_{cls}\mathcal{L}_{cls}^{fake}+\lambda_{seg}\mathcal{L}_{seg}^{fake}">.
 
-
+### Training Algorithm
+Pseudo-code to train the proposed SCGAN can be found [here](img/algorithm.png).
 ## Experiment
 We verify the effectiveness of SCGAN on a face dataset **CelebA** and a fashion dataset **DeepFashion**. We show both visual and quantitative results compared with four representative methods. 
 ### Qualitative Results
-[<img src="img/compare_celeba.png" width = "600">](img/compare_celeba.png)
-
-[<img src="img/compare_deepfashion.png" width = "600">](img/compare_deepfashion.png)
+Results on CelebA dataset:  
+[<img src="img/compare_celeba.png" width = "600">](img/compare_celeba.png)  
+Results on DeepFashion dataset:  
+[<img src="img/compare_deepfashion.png" width = "600">](img/compare_deepfashion.png)  
+NoSmile2Smile Interpolation:                 
+[<img src="img/nosmile2smile.png" width = "300">](img/nosmile2smile.png)  
+Left2Right interpolation:    
+[<img src="img/left2right.png" width = "300">](img/left2right.png)  
 
 ### Quantitative Evaluation
 <img src="img/quantitative.PNG" width = "400">
@@ -60,7 +69,7 @@ If you find this repo useful in your research, please consider citing
 ```
 @inproceedings{jiang2021spatially,
   title={Spatially Constrained GAN for Face and Fashion Synthesis},
-  author={Jiang, Songyao and Tao, Zhiqiang and Fu, Yun},
+  author={Jiang, Songyao and Hongfu Liu and Yue Wu and Fu, Yun},
   booktitle={2021 16th IEEE International Conference on Automatic Face \& Gesture Recognition (FG 2021)},
   year={2019},
   organization={IEEE}
