@@ -20,6 +20,7 @@ where <img src="https://render.githubusercontent.com/render/math?math=G(\cdot,\c
 
 ### Motivations
 - Face and fashion synthesis are inherently one-to-many mapping from semantic segmentations to real images.   
+  
 ### Key Contributions
 - SCGAN decouples the face and fashion synthesis task into three dimensions (spatial, attribute, and latent). 
 - A particularly designed generator extracts spatial information from segmentation, utilizes variations in random latent vectors and applies specified attributes. A segmentor network guides the generator with spatial constraints and improves model convergence.
