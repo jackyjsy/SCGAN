@@ -2,7 +2,7 @@
 layout: default
 ---
 
-This is an official PyTorch implementation of paper "Spatially Constrained GAN for Face and Fashion Synthesis" in FG2021.
+This is an official PyTorch implementation of paper "Spatially Constrained GAN for Face and Fashion Synthesis" in FG 2021.
 
 By [Songyao Jiang](https://www.songyaojiang.com/), [Hongfu Liu](http://hongfuliu.com/), [Yue Wu](http://wuyuebupt.github.io/) and [Yun Fu](http://www1.ece.neu.edu/~yunfu/).
 
@@ -10,7 +10,9 @@ By [Songyao Jiang](https://www.songyaojiang.com/), [Hongfu Liu](http://hongfuliu
 
 ## Problem Definition
 ### Goal
-Decouple the image synthesis task into three dimensions (i.e., spatial, attribute and latent dimensions), control the spatial and attribute-level contents, and randomize the other unregulated contents. Our goal can be described as finding the mapping 
+SCGAN decouples the image synthesis task into three dimensions (i.e., spatial, attribute and latent dimensions), control the spatial and attribute-level contents, and randomize the other unregulated contents. 
+
+Our goal can be described as finding the mapping 
 
 <img src="https://render.githubusercontent.com/render/math?math=G\left(z,c,s\right)\rightarrow y">
 
@@ -28,7 +30,7 @@ where <img src="https://render.githubusercontent.com/render/math?math=G(\cdot,\c
 ### SCGAN Framework
 Our proposed SCGAN consists of three networks shown below, which are a generator network G, a discriminator network D, and a segmentor network S. 
 [<img src="img/framework.png" width = "600">](img/framework.png)
-- We utilize a generator network G to match our desired mapping function <img src="https://render.githubusercontent.com/render/math?math=G\left(z,c,s\right)\rightarrow y">. generator takes three inputs which are a latent code z, an attribute label c, and a target segmentation map s. As shown in the above figure, these inputs are fed into the generator step by step in orders. This particular design of G decides the spatial configuration of the synthesized image according to the spatial constraints extracted from s. Then G forms the basic structure (__e.g.__, background, ambient lighting) of the generated image using the information coded in z. After that, G generates the attribute components specified by c.
+- We utilize a generator network G to match our desired mapping function <img src="https://render.githubusercontent.com/render/math?math=G\left(z,c,s\right)\rightarrow y">. generator takes three inputs which are a latent code z, an attribute label c, and a target segmentation map s. As shown in the above figure, these inputs are fed into the generator step by step in orders. This particular design of G decides the spatial configuration of the synthesized image according to the spatial constraints extracted from s. Then G forms the basic structure (e.g., background, ambient lighting) of the generated image using the information coded in z. After that, G generates the attribute components specified by c.
 - We employ a discriminator network D which forms a GAN framework with G. An auxiliary classifier is embedded in D to do a multi-class classification which provides attribute-level and domain-specific information back to G.
 - We propose a segmentor network S to provide spatial constraints in conditional image generation. S takes either real or generated image data as input and outputs the probabilities of pixel-wise semantic segmentation results
 
