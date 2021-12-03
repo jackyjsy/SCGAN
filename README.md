@@ -28,9 +28,9 @@ If you find this repo useful in your research, please consider citing
 ```
 @inproceedings{jiang2021spatially,
   title={Spatially Constrained GAN for Face and Fashion Synthesis},
-  author={Jiang, Songyao and Tao, Zhiqiang and Fu, Yun},
+  author={Jiang, Songyao and Hongfu Liu and Yue Wu and Fu, Yun},
   booktitle={2021 16th IEEE International Conference on Automatic Face \& Gesture Recognition (FG 2021)},
-  year={2019},
+  year={2021},
   organization={IEEE}
 }
 
