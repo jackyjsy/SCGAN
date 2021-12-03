@@ -29,7 +29,7 @@ where <img src="https://render.githubusercontent.com/render/math?math=G(\cdot,\c
 
 ### SCGAN Framework
 Our proposed SCGAN consists of three networks shown below, which are a generator network G, a discriminator network D, and a segmentor network S. 
-[<p align="center"><img src="img/framework.png" width = "600"></p>](img/framework.png)
+[<img src="img/framework.png" width = "600">](img/framework.png)
 - We utilize a generator network G to match our desired mapping function <img src="https://render.githubusercontent.com/render/math?math=G\left(z,c,s\right)\rightarrow y">. generator takes three inputs which are a latent code z, an attribute label c, and a target segmentation map s. As shown in the above figure, these inputs are fed into the generator step by step in orders. This particular design of G decides the spatial configuration of the synthesized image according to the spatial constraints extracted from s. Then G forms the basic structure (e.g., background, ambient lighting) of the generated image using the information coded in z. After that, G generates the attribute components specified by c.
 - We employ a discriminator network D which forms a GAN framework with G. An auxiliary classifier is embedded in D to do a multi-class classification which provides attribute-level and domain-specific information back to G.
 - We propose a segmentor network S to provide spatial constraints in conditional image generation. S takes either real or generated image data as input and outputs the probabilities of pixel-wise semantic segmentation results
@@ -58,16 +58,16 @@ We verify the effectiveness of SCGAN on a face dataset **CelebA** and a fashion 
 ### Qualitative Results
 Results on CelebA dataset:  
 
-[<p align="center"><img src="img/compare_celeba.png" width = "600"></p>](img/compare_celeba.png)  
+[<img src="img/compare_celeba.png" width = "600">](img/compare_celeba.png)  
 Results on DeepFashion dataset:  
-[<p align="center"><img src="img/compare_deepfashion.png" width = "600"></p>](img/compare_deepfashion.png)  
+[<img src="img/compare_deepfashion.png" width = "600">](img/compare_deepfashion.png)  
 NoSmile2Smile Interpolation:                 
-[<p align="center"><img src="img/nosmile2smile.png" width = "300"></p>](img/nosmile2smile.png)  
+[<img src="img/nosmile2smile.png" width = "300">](img/nosmile2smile.png)  
 Left2Right interpolation:    
-[<p align="center"><img src="img/left2right.png" width = "300"></p>](img/left2right.png)  
+[<img src="img/left2right.png" width = "300">](img/left2right.png)  
 
 ### Quantitative Evaluation
-<p align="center"><img src="img/quantitative.PNG" width = "400"></p>
+<img src="img/quantitative.PNG" width = "400">
 
 ## Citation
 If you find this repo useful in your research, please consider citing 
