@@ -1,3 +1,10 @@
+---
+layout: home
+title: SCGAN
+description: Spatially Constrained GAN (SCGAN)
+---
+
+
 ## Welcome to SCGAN Homepage
 
 An official PyTorch implementation of paper "Spatially Constrained GAN for Face and Fashion Synthesis" in FG2021.
