@@ -2,11 +2,28 @@
 layout: default
 ---
 
-This is an official project page of paper "Spatially Constrained GAN for Face and Fashion Synthesis" in FG 2021.
+This is the official project page for paper "Spatially Constrained GAN for Face and Fashion Synthesis" in accepted FG 2021 as oral.
 
-By [Songyao Jiang](https://www.songyaojiang.com/), [Hongfu Liu](http://hongfuliu.com/), [Yue Wu](http://wuyuebupt.github.io/) and [Yun Fu](http://www1.ece.neu.edu/~yunfu/).
+by [Songyao Jiang](https://www.songyaojiang.com/), [Hongfu Liu](http://hongfuliu.com/), [Yue Wu](http://wuyuebupt.github.io/) and [Yun Fu](http://www1.ece.neu.edu/~yunfu/).
 
 [Smile Lab @ Northeastern University](https://web.northeastern.edu/smilelab/)
+
+[<img src="img/logo-color-light.png" width = "200">](img/logo-color-light.png)  
+
+## Table of Contents
+* [Problem Definition](#Problem-Definition)
+    * [Goal](#Goal)
+    * [Motivations](#Motivations)
+    * [Key Contributions](#Key-Contributions)
+* [Method](#Method)
+    * [SCGAN Framework](#SCGAN-Framework)
+    * [Objective Functions](#Objective-Functions)
+    * [Training Algorithm](#Training-Algorithm)
+* [Experiment](#Experiment)
+    * [Qualitative Results](#Qualitative-Results)
+    * [Quantitative Evaluation](#Quantitative-Evaluation)
+* [Citation](#Citation)
+
 
 ## Problem Definition
 ### Goal
