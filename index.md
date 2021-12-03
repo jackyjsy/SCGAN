@@ -8,7 +8,7 @@ by [Songyao Jiang](https://www.songyaojiang.com/), [Hongfu Liu](http://hongfuliu
 
 [Smile Lab @ Northeastern University](https://web.northeastern.edu/smilelab/)
 
-[<img src="img/logo-color-light.png" width = "200">](img/logo-color-light.png)  
+[<img src="img/logo-color-dark.png" width = "200">](img/logo-color-dark.png)  
 
 <!-- ## Table of Contents
 * [Problem Definition](#Problem-Definition)
