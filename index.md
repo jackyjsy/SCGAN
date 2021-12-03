@@ -1,8 +1,3 @@
----
-layout: home
-title: SCGAN
-description: Spatially Constrained GAN (SCGAN)
----
 
 
 ## Welcome to SCGAN Homepage
