@@ -19,7 +19,7 @@ Our goal can be described as finding the mapping
 where <img src="https://render.githubusercontent.com/render/math?math=G(\cdot,\cdot,\cdot)"> is the generating function, <img src="https://render.githubusercontent.com/render/math?math=z"> is the latent vector of size <img src="https://render.githubusercontent.com/render/math?math=($1 \times n_z$)">, and <img src="https://render.githubusercontent.com/render/math?math=y"> is the conditionally generated image which complies with the target conditions <img src="https://render.githubusercontent.com/render/math?math=c"> and <img src="https://render.githubusercontent.com/render/math?math=s">. 
 
 ### Motivations
-- Face and fashion synthesis are inherently one-to-many mapping from semantic segmentations to real images.
+- Face and fashion synthesis are inherently one-to-many mapping from semantic segmentations to real images.  
 ### Key Contributions
 - SCGAN decouples the face and fashion synthesis task into three dimensions (spatial, attribute, and latent). 
 - A particularly designed generator extracts spatial information from segmentation, utilizes variations in random latent vectors and applies specified attributes. A segmentor network guides the generator with spatial constraints and improves model convergence.
