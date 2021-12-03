@@ -6,22 +6,34 @@ By [Songyao Jiang](https://www.songyaojiang.com/), [Hongfu Liu](http://hongfuliu
 
 [Smile Lab @ Northeastern University](https://web.northeastern.edu/smilelab/)
 
-## Data Preparation
+## Problem Definition
+### Goal:
+Decouple the image synthesis task into three dimensions (i.e., spatial, attribute and latent dimensions), control the spatial and attribute-level contents, and randomize the other unregulated contents. Our goal can be described as finding the mapping 
 
-1. Download [CelebA Dataset](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html). We used their aligned&cropped version. Preprocessed segmentation data for CelebA is provided at [GoogleDrive](https://drive.google.com/file/d/1K496cZAlssIvrbW8ygzivYobWvQuAaGM/view?usp=sharing).
+<img src="img/eq1.png" width = "100">
 
-2. Download [DeepFashion Dataset](https://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html). We used their [Fashion Synthesis Subset](https://mmlab.ie.cuhk.edu.hk/projects/DeepFashion/FashionSynthesis.html)
+$G\left(z,c,s\right)\rightarrow y$,
 
-## Train
-```
-bash scripts/train_celeba_command.sh
-bash scripts/train_fashion_command.sh
-```
-## Test
-```
-bash scripts/test_celeba_command.sh
-bash scripts/test_fashion_command.sh
-```
+where $G(\cdot,\cdot,\cdot)$ is the generating function, $z$ is the latent vector of size ($1 \times n_z$), and $y$ is the conditionally generated image which complies with the target conditions $c$ and $s$. 
+
+### Motivations
+- Face and fashion synthesis are inherently one-to-many mapping from semantic segmentations to real images.
+### Key Contributions
+- SCGAN decouples the face and fashion synthesis task into three dimensions (spatial, attribute, and latent). 
+- A particularly designed generator extracts spatial information from segmentation, utilizes variations in random latent vectors and applies specified attributes. A segmentor network guides the generator with spatial constraints and improves model convergence.
+- Extensive experiments on the CelebA and DeepFashion datasets demonstrate the effectiveness of SCGAN.
+
+## SCGAN Framework
+[<img src="img/framework.png" width = "600">](img/framework.png)
+
+## Qualitative Results
+[<img src="img/compare_celeba.png" width = "600">](img/compare_celeba.png)
+
+[<img src="img/compare_deepfashion.png" width = "600">](img/compare_deepfashion.png)
+
+## Quantitative Evaluation
+<img src="img/quantitative.png" width = "400">
+
 ## Citation
 If you find this repo useful in your research, please consider citing 
 ```
