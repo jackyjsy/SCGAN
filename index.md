@@ -10,7 +10,7 @@ by [Songyao Jiang](https://www.songyaojiang.com/), [Hongfu Liu](http://hongfuliu
 
 [<img src="img/logo-color-light.png" width = "200">](img/logo-color-light.png)  
 
-## Table of Contents
+<!-- ## Table of Contents
 * [Problem Definition](#Problem-Definition)
     * [Goal](#Goal)
     * [Motivations](#Motivations)
@@ -22,7 +22,7 @@ by [Songyao Jiang](https://www.songyaojiang.com/), [Hongfu Liu](http://hongfuliu
 * [Experiment](#Experiment)
     * [Qualitative Results](#Qualitative-Results)
     * [Quantitative Evaluation](#Quantitative-Evaluation)
-* [Citation](#Citation)
+* [Citation](#Citation) -->
 
 
 ## Problem Definition
