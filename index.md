@@ -2,7 +2,7 @@
 layout: default
 ---
 
-This is an official PyTorch implementation of paper "Spatially Constrained GAN for Face and Fashion Synthesis" in FG 2021.
+This is an official project page of paper "Spatially Constrained GAN for Face and Fashion Synthesis" in FG 2021.
 
 By [Songyao Jiang](https://www.songyaojiang.com/), [Hongfu Liu](http://hongfuliu.com/), [Yue Wu](http://wuyuebupt.github.io/) and [Yun Fu](http://www1.ece.neu.edu/~yunfu/).
 
