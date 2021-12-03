@@ -1,14 +1,49 @@
-## Welcome to GitHub Pages
+## Welcome to SCGAN Homepage
 
-You can use the [editor on GitHub](https://github.com/jackyjsy/SCGAN/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+An official PyTorch Implementation of paper "Spatially Constrained GAN for Face and Fashion Synthesis" in FG2021.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+By [Songyao Jiang](https://www.songyaojiang.com/), [Hongfu Liu](http://hongfuliu.com/), [Yue Wu](http://wuyuebupt.github.io/) and [Yun Fu](http://www1.ece.neu.edu/~yunfu/).
 
-### Markdown
+[Smile Lab @ Northeastern University](https://web.northeastern.edu/smilelab/)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Data Preparation
 
-```markdown
+1. Download [CelebA Dataset](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html). We used their aligned&cropped version. Preprocessed segmentation data for CelebA is provided at [GoogleDrive](https://drive.google.com/file/d/1K496cZAlssIvrbW8ygzivYobWvQuAaGM/view?usp=sharing).
+
+2. Download [DeepFashion Dataset](https://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html). We used their [Fashion Synthesis Subset](https://mmlab.ie.cuhk.edu.hk/projects/DeepFashion/FashionSynthesis.html)
+
+## Train
+```
+bash scripts/train_celeba_command.sh
+bash scripts/train_fashion_command.sh
+```
+## Test
+```
+bash scripts/test_celeba_command.sh
+bash scripts/test_fashion_command.sh
+```
+## Citation
+If you find this repo useful in your research, please consider citing 
+```
+@inproceedings{jiang2021spatially,
+  title={Spatially Constrained GAN for Face and Fashion Synthesis},
+  author={Jiang, Songyao and Tao, Zhiqiang and Fu, Yun},
+  booktitle={2021 16th IEEE International Conference on Automatic Face \& Gesture Recognition (FG 2021)},
+  year={2019},
+  organization={IEEE}
+}
+
+@inproceedings{jiang2019segmentation,
+  title={Segmentation guided image-to-image translation with adversarial networks},
+  author={Jiang, Songyao and Tao, Zhiqiang and Fu, Yun},
+  booktitle={2019 14th IEEE International Conference on Automatic Face \& Gesture Recognition (FG 2019)},
+  pages={1--7},
+  year={2019},
+  organization={IEEE}
+}
+```
+
+<!-- ```markdown
 Syntax highlighted code block
 
 # Header 1
@@ -24,14 +59,4 @@ Syntax highlighted code block
 **Bold** and _Italic_ and `Code` text
 
 [Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jackyjsy/SCGAN/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+``` -->
