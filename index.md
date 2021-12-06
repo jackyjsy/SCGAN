@@ -2,7 +2,7 @@
 layout: default
 ---
 
-This is the official project page for paper "Spatially Constrained GAN for Face and Fashion Synthesis" in accepted FG 2021 as oral.
+This is the official project page of our paper "Spatially Constrained GAN for Face and Fashion Synthesis" accepted to FG 2021 as oral.
 
 by [Songyao Jiang](https://www.songyaojiang.com/), [Hongfu Liu](http://hongfuliu.com/), [Yue Wu](http://wuyuebupt.github.io/) and [Yun Fu](http://www1.ece.neu.edu/~yunfu/).
 
