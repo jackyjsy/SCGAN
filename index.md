@@ -33,7 +33,7 @@ Our goal can be described as finding the mapping
 
 <img src="https://render.githubusercontent.com/render/math?math=G\left(z,c,s\right)\rightarrow y">
 
-where <img src="https://render.githubusercontent.com/render/math?math=G(\cdot,\cdot,\cdot)"> is the generating function, <img src="https://render.githubusercontent.com/render/math?math=z"> is the latent vector of size <img src="https://render.githubusercontent.com/render/math?math=($1 \times n_z$)">, and <img src="https://render.githubusercontent.com/render/math?math=y"> is the conditionally generated image which complies with the target conditions <img src="https://render.githubusercontent.com/render/math?math=c"> and <img src="https://render.githubusercontent.com/render/math?math=s">. 
+where <img src="https://render.githubusercontent.com/render/math?math=G(\cdot,\cdot,\cdot)"> is the generating function, <img src="https://render.githubusercontent.com/render/math?math=z"> is the latent vector of size (<img src="https://render.githubusercontent.com/render/math?math=1 \times n_z">), and <img src="https://render.githubusercontent.com/render/math?math=y"> is the conditionally generated image which complies with the target conditions <img src="https://render.githubusercontent.com/render/math?math=c"> and <img src="https://render.githubusercontent.com/render/math?math=s">. 
 
 ### Motivations
 - Face and fashion synthesis are inherently one-to-many mapping from semantic segmentations to real images.   
@@ -71,8 +71,28 @@ which can be rewritten as
 
 ### Training Algorithm
 Pseudo-code to train the proposed SCGAN can be found [here](img/algorithm.png).
+
+### Network Architecture
+[<img src="img/architecture.PNG" width = "400">](img/architecture.PNG)
+
 ## Experiment
 We verify the effectiveness of SCGAN on a face dataset **CelebA** and a fashion dataset **DeepFashion**. We show both visual and quantitative results compared with four representative methods. 
+### Datasets
+[<img src="img/celeba.jpg" width = "300">](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html)
+[<img src="img/deepfashion.jpg" width = "300">](https://mmlab.ie.cuhk.edu.hk/projects/DeepFashion/FashionSynthesis.html)
+
+CelebA is a face attribute dataset:
+- 10,177 identities,
+- 202,599 number of face images, and
+- 5 landmark locations, 
+- 40 binary attributes annotations.
+
+DeepFashion is a large-scale clothes database with 50 categories, 1,000 descriptive attributes. We use its Fashion Synthesis subset:
+- 78,979 images, 
+- Captions of attributes,
+- Ground-truth segmentations.
+
+
 ### Qualitative Results
 Results on CelebA dataset:  
 
@@ -85,7 +105,46 @@ Left2Right interpolation:
 [<img src="img/left2right.png" width = "300">](img/left2right.png)  
 
 ### Quantitative Evaluation
+Evaluation:
+- Visual quality
+- Spatial correctness
+
+Metrics:
+- Frechet Inception Distance (FID)
+- Pixel Accuracy
+- Mean IoU (intersection over union)
+
 <img src="img/quantitative.PNG" width = "400">
+
+### Ablation Study of Generator Architecture
+Our proposed architecture: 
+- Step-by-step generator G.
+- From coarse to fine synthesis.
+
+Alternative architecture:
+- Input all at once generator G.
+
+Compared alternative generator, our proposed step-by-step generator has:
+- Better visual quality.
+- Sharper details
+- No foreground-background mismatch.
+
+[<img src="img/ablation_generator.jpg" width = "300">](img/ablation_generator.jpg) 
+
+
+### Ablation Study of Model Convergence
+Settings:
+- SCGAN.
+- w/o Segmentor.
+- w/o Segmentor & Classifier.
+
+Benefits of Segmentor S:
+- Stabilizing training.
+- Faster convergence.
+- Lower loss when converged.
+- Better image quality.
+
+[<img src="img/ablation_convergence.jpg" width = "400">](img/ablation_convergence.jpg) 
 
 ## Citation
 If you find this repo useful in your research, please consider citing 
