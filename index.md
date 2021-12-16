@@ -2,9 +2,15 @@
 layout: default
 ---
 
-This is the official project page of our paper "Spatially Constrained GAN for Face and Fashion Synthesis" accepted to FG 2021 as oral.
+[<img src="img/best_paper.jpg" width = "500">](img/logo-color-dark.png)  
+
+This is the official project page of our paper "Spatially Constrained GAN for Face and Fashion Synthesis" that has been accepted to FG 2021 as oral and received the **NVIDIA CCS Best Student Paper Award**!
 
 by [Songyao Jiang](https://www.songyaojiang.com/), [Hongfu Liu](http://hongfuliu.com/), [Yue Wu](http://wuyuebupt.github.io/) and [Yun Fu](http://www1.ece.neu.edu/~yunfu/).
+
+
+
+
 
 [Smile Lab @ Northeastern University](https://web.northeastern.edu/smilelab/)
 
