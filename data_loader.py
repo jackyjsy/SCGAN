@@ -106,7 +106,7 @@ class FashionDataset(Dataset):
         self.seg_data = self.f['b_']
         self.image_data = self.f['ih']
         self.image_mean = self.f['ih_mean']
-        self.cond_data = sio.loadmat(os.path.join(metadata_path, 'encode_hn2_rnn_100_2_full.mat'))['hn2']
+        # self.cond_data = sio.loadmat(os.path.join(metadata_path, 'encode_hn2_rnn_100_2_full.mat'))['hn2']
         self.label_data = sio.loadmat(os.path.join(metadata_path, 'language_original.mat'))['color_']
         self.num_data = len(self.image_data)
         self.preprocess()
